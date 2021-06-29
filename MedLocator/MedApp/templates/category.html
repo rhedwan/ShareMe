@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<style>
+    li{
+        display: flex;
+    }
+</style>
+
+{% for i in posts %}
+
+<li>
+    <div class="">
+        <img class="img-fluid" src="{{i.image.url}}" alt="" width="150">
+    </div>
+    <div class="">
+        Name: {{i.name}} <br>
+        Description: {{i.description}} <br> <br>
+        Date: {{i.date_uploaded}}
+    </div>
+</li>
+<!-- <article class="blog_style1">
+    <div class="blog_img">
+        <img class="img-fluid" src="{{i.image.url}}" alt="">
+    </div>
+    <div class="blog_text">
+        <div class="blog_text_inner">
+            <a class="cat" href="#">Gadgets</a>
+            <a href="#"><h4>{{i.name}}</h4></a>
+            <p>{{i.description}}</p>
+            <div class="date">
+                <a href="#"><i class="fa fa-calendar" aria-hidden="true"></i> {{i.date_uploaded}}</a>
+                <a href="#"><i class="fa fa-comments-o" aria-hidden="true"></i> 05</a>
+            </div>	
+        </div>
+    </div>
+</article> -->
+{% endfor %}
+
+
+{% endblock %}

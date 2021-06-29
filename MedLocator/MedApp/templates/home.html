@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    {% include 'category_menu.html' %}
+    
+    <div class="row row-cols-1 row-cols-md-4 g-4">
+        {% for item in object_list %}
+        <div class="col">
+          <div class="card">
+            <img src="{{item.image.url}}" class="card-img-top" alt="..." height="150">
+            <div class="card-body">
+              <h5 class="card-title">{{item.name}}</h5>
+              <p class="card-text">{{item.description|slice:':118'}}</p>
+                <a href="{% url 'detail_item' item.pk %}" class="btn btn-primary">Read More</a>
+                <a href="{% url 'edit_item' item.pk %}" class="btn btn-primary">Edit</a>
+            </div>
+            <div class="card-footer">
+                <small class="text-muted">Price: &#8358; {{item.price}}
+                </small>
+            </div>
+          </div>
+        </div>
+        {% endfor %} 
+      </div>
+
+{% endblock %}

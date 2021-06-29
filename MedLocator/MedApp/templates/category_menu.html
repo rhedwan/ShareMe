@@ -1,0 +1,11 @@
+{% load custom_tags %}  
+{% categories as categories  %}
+{% for c in categories %}
+<li>
+
+    <a href="{% url 'category' pk=c.pk slug=c.slug %}" >
+        <span>{{c.title}}</span>
+        <span>{{c.post_count}}</span>
+    </a>
+</li>
+{% endfor %}

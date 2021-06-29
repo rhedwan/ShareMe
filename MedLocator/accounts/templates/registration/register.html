@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+<h1>Register Here</h1>
+    <br><br>
+
+<div class="form-group">
+    <form method="POST">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <span class="helptext">I have read the <a href="#">terms and policy condition</a></span>
+        <button  class="btn btn-secondary">Register</button>
+   
+</div>
+{% endblock %}
+
